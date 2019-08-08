@@ -424,6 +424,8 @@ export default {
       document.getElementById("emotion").style.display = dis;
     },
     getPokemon(name) {
+      // alert('Catch the moving ' + name + ' by click it!')
+      // return
       this.pokemon = null;
       axios(this.endpoint + name)
         .then(response => {
@@ -431,6 +433,7 @@ export default {
           this.speed = parseInt(response.data.stats[0].base_stat) * 10;
           this.sprites = response.data.sprites;
           this.pokemon = response.data;
+          alert('Catch the moving ' + name + ' by click it!')
         })
         .catch(error => {
           console.log(error);
