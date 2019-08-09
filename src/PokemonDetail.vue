@@ -66,6 +66,7 @@
       </a>
     </div>
     <h1 class="post__title icon-pokemon">{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h1>
+    <h4>Click on moving {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }} to catch!</h4>
     <p class="post__body">
       <img id="emotion" :src="pokemon.sprites['front_default']" @click="tangkap(pokemon)" width="120" height="120" />
       Another form (click to flip):
@@ -433,7 +434,7 @@ export default {
           this.speed = parseInt(response.data.stats[0].base_stat) * 10;
           this.sprites = response.data.sprites;
           this.pokemon = response.data;
-          alert('Catch the moving ' + name + ' by click it!')
+          // alert('Catch the moving ' + name + ' by click it!')
         })
         .catch(error => {
           console.log(error);
